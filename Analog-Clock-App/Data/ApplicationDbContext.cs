@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Analog_Clock_App.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace Analog_Clock_App.Data
             : base(options)
         {
         }
+        public DbSet<ApplicationUser> applicationUsers { get; set; }
+        public DbSet<ApplicationUserAddress> applicationUserAddresses{ get; set; }
     }
 }
