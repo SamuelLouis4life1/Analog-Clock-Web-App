@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Analog_Clock_App.Models;
 using Microsoft.AspNetCore.Authentication;
@@ -62,18 +63,17 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            [Display(Name = "Complete Name ")]
+            [Display(Name = "Complete Name")]
             [Required]
             [MaxLength(50)]
             public string Name { get; set; }
 
-            [Display(Name = "Phone Number ")]
+            [Display(Name = "Phone Number")]
             [Required]
             [MaxLength(50)]
             public string PhoneNumber { get; set; }
 
-            [Display(Name = "Birthday ")]
-            [MaxLength(50)]
+            [Display(Name = "Birthday")]
             public DateTime Birthday { get; set; }
 
             public ApplicationUserAddress ApplicationUserAddress { get; set; }
@@ -87,6 +87,10 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            var PasswordPattern = "Password@123";
+            var expectedPasswordPattern = new Regex(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+            var isValidPassword = expectedPasswordPattern.IsMatch(PasswordPattern);
+
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)

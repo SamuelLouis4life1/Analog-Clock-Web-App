@@ -51,7 +51,9 @@
         }
 
         <input asp-for="Input.Email" placeholder="Email..." type="email" class="mb-1 form-control" />
-        <input asp-for="Input.Password" placeholder="Password..." type="password" class="form-control" />
+        <input asp-for="Input.Password" placeholder="Password..." type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" title="Must contain at least one number and one uppercase letter at the biginning and lowercase letter, and at least 8 or more characters" required />
+
+        @*<input asp-for="Input.Password" placeholder="Password..." type="password" class="form-control" />*@
         <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Sign in</button>
 
         <a id="forgot-password" asp-page="./ForgotPassword" class="pb-2 text-info">Forgot your password?</a>

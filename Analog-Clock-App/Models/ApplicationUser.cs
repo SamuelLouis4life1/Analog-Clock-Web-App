@@ -26,7 +26,6 @@ namespace Analog_Clock_App.Models
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Birthday ")]
-        [MaxLength(50)]
         public DateTime Birthday { get; set; }
 
         public ApplicationUserAddress ApplicationUserAddress { get; set; }
