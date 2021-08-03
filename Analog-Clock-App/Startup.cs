@@ -35,6 +35,18 @@ namespace Analog_Clock_App
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddAuthentication().AddFacebook(options =>
+            {
+                options.AppId = "1267700540348536";
+                options.AppSecret = "f620a0137201fb826ff19515442428c4";
+            });
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                options.ClientId = "61465416807-fpk0jonr4fpo894i2jpib2ihtaacookn.apps.googleusercontent.com";
+                options.ClientSecret = "SwRkLYdvdXf3-zbQWYeMqrc9";
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

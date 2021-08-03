@@ -21,68 +21,68 @@
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="form-group">
                             <label asp-for="Input.Name" placeholder="Complete Name..."></label>
-                            <input asp-for="Input.Name" placeholder="Complete Name" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="mb-1 form-control" required/>
+                            <input asp-for="Input.Name" placeholder="Complete Name" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="mb-1 form-control" required />
 
                             <span asp-validation-for="Input.Name" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.Email"></label>
                             <input asp-for="Input.Email" placeholder="Email..." type="email" class="mb-1 form-control" />
-                            
+
                             @*<input asp-for="Input.Email" class="form-control" />*@
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.PhoneNumber"></label>
-                            <input asp-for="Input.PhoneNumber" class="form-control" />
+                            <input asp-for="Input.PhoneNumber"  placeholder="Phone Number" class="form-control" />
                             <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                         </div>
                         @*<div class="form-group">
-                            <label asp-for="Input.Birthday"></label>
-                            <input asp-for="Input.Birthday" class="form-control" />
-                            <span asp-validation-for="Input.Birthday" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.PostalCode"></label>
-                            <input asp-for="Input.ApplicationUserAddress.PostalCode" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.PostalCode" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.StreetAddress"></label>
-                            <input asp-for="Input.ApplicationUserAddress.StreetAddress" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.StreetAddress" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.Neighborhood"></label>
-                            <input asp-for="Input.ApplicationUserAddress.Neighborhood" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.Neighborhood" class="text-danger"></span>
-                        </div>            <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.City"></label>
-                            <input asp-for="Input.ApplicationUserAddress.City" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.City" class="text-danger"></span>
-                        </div>            <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.State"></label>
-                            <input asp-for="Input.ApplicationUserAddress.State" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.State" class="text-danger"></span>
-                        </div>            <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.Number"></label>
-                            <input asp-for="Input.ApplicationUserAddress.Number" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.Number" class="text-danger"></span>
-                        </div>            <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.Ibge"></label>
-                            <input asp-for="Input.ApplicationUserAddress.Ibge" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.Ibge" class="text-danger"></span>
-                        </div>            <div class="form-group">
-                            <label asp-for="Input.ApplicationUserAddress.DDD"></label>
-                            <input asp-for="Input.ApplicationUserAddress.DDD" class="form-control" />
-                            <span asp-validation-for="Input.ApplicationUserAddress.DDD" class="text-danger"></span>
-                        </div>*@
+            <label asp-for="Input.Birthday"></label>
+            <input asp-for="Input.Birthday" class="form-control" />
+            <span asp-validation-for="Input.Birthday" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.PostalCode"></label>
+            <input asp-for="Input.ApplicationUserAddress.PostalCode" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.PostalCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.StreetAddress"></label>
+            <input asp-for="Input.ApplicationUserAddress.StreetAddress" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.StreetAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.Neighborhood"></label>
+            <input asp-for="Input.ApplicationUserAddress.Neighborhood" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.Neighborhood" class="text-danger"></span>
+        </div>            <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.City"></label>
+            <input asp-for="Input.ApplicationUserAddress.City" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.City" class="text-danger"></span>
+        </div>            <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.State"></label>
+            <input asp-for="Input.ApplicationUserAddress.State" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.State" class="text-danger"></span>
+        </div>            <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.Number"></label>
+            <input asp-for="Input.ApplicationUserAddress.Number" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.Number" class="text-danger"></span>
+        </div>            <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.Ibge"></label>
+            <input asp-for="Input.ApplicationUserAddress.Ibge" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.Ibge" class="text-danger"></span>
+        </div>            <div class="form-group">
+            <label asp-for="Input.ApplicationUserAddress.DDD"></label>
+            <input asp-for="Input.ApplicationUserAddress.DDD" class="form-control" />
+            <span asp-validation-for="Input.ApplicationUserAddress.DDD" class="text-danger"></span>
+        </div>*@
 
-                    <div class="form-group">
-                        <label asp-for="Input.Password"></label>
-                        <input asp-for="Input.Password" placeholder="Password" type="password" class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" title="Must contain at least one number and one uppercase letter at the biginning and lowercase letter, and at least 8 or more characters" required />
-                        <span asp-validation-for="Input.Password" class="text-danger"></span>
-                    </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" placeholder="Password" type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" title="Must contain at least one number and one uppercase letter at the biginning and lowercase letter, and at least 8 or more characters" required />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
                         <div class="form-group">
                             <label asp-for="Input.ConfirmPassword"></label>
                             <input asp-for="Input.ConfirmPassword" placeholder="Confirm Password" class="form-control" />
