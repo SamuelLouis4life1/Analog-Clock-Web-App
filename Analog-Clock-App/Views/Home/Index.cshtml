@@ -1,8 +1,20 @@
-﻿@{
+﻿@model Analog_Clock_App.Models.ApplicationUser
+
+@*https://www.includehelp.com/dot-net/print-date-and-time-in-different-formats.aspx*@
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h2>The time on the server is @DateTime.Now</h2>
+
+
+
+
+
+
 </div>

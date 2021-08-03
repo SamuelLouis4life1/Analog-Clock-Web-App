@@ -46,6 +46,8 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
             [EmailAddress]
             public string Email { get; set; }
 
+            //[RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+            [RegularExpression(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }

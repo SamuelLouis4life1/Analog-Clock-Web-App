@@ -20,7 +20,30 @@ namespace Analog_Clock_App.Controllers
 
         public IActionResult Index()
         {
-            return View();
+
+            ApplicationUser person = new ApplicationUser
+            {
+                //DateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T').ToUpper()
+                DateTime =  DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture)
+                // DateTime =  DateTime.Now.ToString("yyyy.MMMMM.dd")
+
+            };
+
+            return View(person);
+        }
+
+        public IActionResult Upsert ()
+        {
+
+            ApplicationUser person = new ApplicationUser
+            {
+                //DateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T').ToUpper()
+                DateTime = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture)
+                // DateTime =  DateTime.Now.ToString("yyyy.MMMMM.dd")
+
+            };
+
+            return View(person);
         }
 
         public IActionResult Privacy()
@@ -33,5 +56,6 @@ namespace Analog_Clock_App.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

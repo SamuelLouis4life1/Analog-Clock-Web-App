@@ -76,6 +76,10 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
             [Display(Name = "Birthday")]
             public DateTime Birthday { get; set; }
 
+            [DataType(DataType.Date)]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+            public string DateTime { get; set; }
+
             public ApplicationUserAddress ApplicationUserAddress { get; set; }
         }
 
@@ -87,10 +91,6 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            var PasswordPattern = "Password@123";
-            var expectedPasswordPattern = new Regex(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
-            var isValidPassword = expectedPasswordPattern.IsMatch(PasswordPattern);
-
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)

@@ -28,6 +28,10 @@ namespace Analog_Clock_App.Models
         [Display(Name = "Birthday ")]
         public DateTime Birthday { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        public string DateTime { get; set; }
+
         public ApplicationUserAddress ApplicationUserAddress { get; set; }
 
     }
