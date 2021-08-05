@@ -22,7 +22,7 @@ namespace Analog_Clock_App.Controllers
         {
 
             ApplicationUser applicationUser = new ApplicationUser
-            {
+            {  
                 DateTime =  DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture).ToUpper()                
             };
 
