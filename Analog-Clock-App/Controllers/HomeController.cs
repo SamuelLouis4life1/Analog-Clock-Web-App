@@ -21,14 +21,16 @@ namespace Analog_Clock_App.Controllers
         public IActionResult Index()
         {
 
-            ApplicationUser applicationUser = new ApplicationUser
-            {  
-                DateTime =  DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture).ToUpper()                
-            };
+            try
+            {
 
-            var dataHoraLocal = DateTime.Now.ToString("MMMM, dd dddd, yyyy hh:mm tt").ToUpper();
+            }
+            catch (Exception ex)
+            {
 
-            return View(applicationUser);
+            }
+
+            return View();
         }
 
 

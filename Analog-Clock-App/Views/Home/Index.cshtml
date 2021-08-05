@@ -6,18 +6,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-
-<div class="center">
+<div class="text-center">
     <h1 class="display-4">Welcome, Cool Analog Clock</h1>
 
     <div class="center">
-        <canvas id="clk2" style="display:block;" class="CoolClock:fancy"></canvas>
+        <div class="center">
+            <canvas id="clk2" style="display:block;" class="CoolClock:fancy"></canvas>
+        </div>
     </div>
 
     <h2>The time on the server is: @DateTime.Now.ToString("MMMM, dddd, yyyy", System.Globalization.CultureInfo.InvariantCulture).ToUpper()</h2>
     <h2>A hora no servidor é: @DateTime.Now.ToString("dddd, dd MMMM, yyyy").ToUpper()</h2>
-
-</div>
-
 
