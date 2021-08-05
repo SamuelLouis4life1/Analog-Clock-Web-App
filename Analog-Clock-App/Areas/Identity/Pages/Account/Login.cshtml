@@ -67,6 +67,86 @@
 
 </div>
 
+
+
+
+
+
+
+
+
+@*<div>
+        @(Html.JQSegmentedDisplay().SegmentedDisplay()
+                    .ID("jqSegmentedDisplay")
+                    .Width(500)
+                    .Height(100)
+                    .Background("#DCDCDC")
+                    .Digits(6)
+                    .DigitWidth(0.72)
+                    .DigitMargin(margin =>
+                        {
+                            margin.Left(10);
+                        })
+                    .SegmentMode(SegmentMode.SevenSegment)
+                    .TextForeground("#333333")
+                    .TextForegroundUnlit("rgba(201, 201, 201, 0.5)")
+                    .Border(border =>
+                        {
+                            border.StrokeStyle("#76786A").Padding(10).LineWidth(4);
+                        })
+            .Render()
+              )
+        <script lang="javascript" type="text/javascript">
+                function updateDisplay() {
+                    var currentTime = getValidTime();
+
+                    $('#jqSegmentedDisplay').jqSegmentedDisplay('option', 'text', currentTime.toString());
+
+                    setTimeout('updateDisplay()', 1000);
+                }
+
+                function getValidTime() {
+                    var currentTime = new Date();
+
+                    var hoursValue = currentTime.getHours();
+                    var minutesValue = currentTime.getMinutes();
+                    var secondsValue = currentTime.getSeconds();
+
+                    if (hoursValue > 12) {
+                        hoursValue -= 12;
+                    }
+
+                    if (hoursValue < 10) {
+                        hoursValue = '0' + hoursValue;
+                    }
+                    if (minutesValue < 10) {
+                        minutesValue = '0' + minutesValue;
+                    }
+                    if (secondsValue < 10) {
+                        secondsValue = '0' + secondsValue;
+                    }
+
+                    return hoursValue + ':' + minutesValue + ':' + secondsValue;
+                }
+
+                $(document).ready(function () {
+                    updateDisplay();
+                });
+        </script>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    <script src="~/js/coolclock.js"></script>
+
 }
