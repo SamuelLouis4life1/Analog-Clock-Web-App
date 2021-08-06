@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,31 +11,53 @@ namespace Analog_Clock_App.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "CEP ")]
-        [MaxLength(50)]
+        [JsonProperty("cep")]
+        [Display(Name = "Postal Code")]
+        [MaxLength(10)]
         public string PostalCode { get; set; }
-        
-        [Display(Name = "Logradouro ")]
+
+        [JsonProperty("logradouro")]
+        [Display(Name = "Street Address ")]
         [MaxLength(50)]
         public string StreetAddress { get; set; }
 
-        [Display(Name = "Bairro ")]
+        [JsonProperty("complemento")]
+        [Display(Name = "Addicional Address ")]
+        [MaxLength(50)]
+        public string AddicionalAddress { get; set; }
+
+        [JsonProperty("bairro")]
+        [Display(Name = "Neighborhood ")]
         [MaxLength(50)]
         public string Neighborhood { get; set; }
+        
 
-        [Display(Name = "Localidade ")]
+        [JsonProperty("localidade")]
+        [Display(Name = "City ")]
         [MaxLength(50)]
         public string City { get; set; }
 
-        [Display(Name = "UF ")]
+        [JsonProperty("uf")]
+        [Display(Name = "State ")]
         [MaxLength(50)]
         public string State { get; set; }
-        
+
+        [JsonProperty("numero")]
+        [MaxLength(5)]
         public string Number { get; set; }
+
+        [JsonProperty("ibge")]
         public string Ibge { get; set; }
+
+        [JsonProperty("gia")]
         public string Gia { get; set; }
+
+        [JsonProperty("ddd")]
         public string DDD { get; set; }
+
+        [JsonProperty("siafi")]
         public string Siafi { get; set; }
+
         public bool IsAuthorizedToPause { get; set; }
         
     }

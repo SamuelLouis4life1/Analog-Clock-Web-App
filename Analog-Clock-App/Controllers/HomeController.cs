@@ -21,30 +21,16 @@ namespace Analog_Clock_App.Controllers
         public IActionResult Index()
         {
 
-            ApplicationUser person = new ApplicationUser
+            ApplicationUser applicationUser = new ApplicationUser
             {
-                //DateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T').ToUpper()
-                DateTime =  DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture)
-                // DateTime =  DateTime.Now.ToString("yyyy.MMMMM.dd")
-
+                DateTime =  DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture).ToUpper()                
             };
 
-            return View(person);
+            var dataHoraLocal = DateTime.Now.ToString("MMMM, dd dddd, yyyy hh:mm tt").ToUpper();
+
+            return View(applicationUser);
         }
 
-        public IActionResult Upsert ()
-        {
-
-            ApplicationUser person = new ApplicationUser
-            {
-                //DateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").Replace(' ', 'T').ToUpper()
-                DateTime = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", System.Globalization.CultureInfo.InvariantCulture)
-                // DateTime =  DateTime.Now.ToString("yyyy.MMMMM.dd")
-
-            };
-
-            return View(person);
-        }
 
         public IActionResult Privacy()
         {

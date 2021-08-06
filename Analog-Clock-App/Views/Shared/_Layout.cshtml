@@ -1,22 +1,31 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Analog_Clock_App</title>
 
+    @*C:\Users\samuel.louis\OneDriveTelecall\Área de Trabalho\Project From Bitbucket\Analog-Clock-App\wwwroot\js\clock.js*@
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />*@
+        <link rel="stylesheet" href="~/css/site.css" />*@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/js/clock.js" />
+    <link rel="stylesheet" href="~/js/clocks.js" />
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 
+
 </head>
-<body>
+<body onload="CoolClock.findAndCreateClocks()">
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container">
@@ -39,6 +48,11 @@
             </div>
         </nav>
     </header>
+
+    @*<canvas id="clk1" class="CoolClock:fancy myClock"></canvas>
+        <canvas id="clockid" class="CoolClock:Skin:Radius:noSeconds:GMTOffset"></canvas>*@
+    @*<canvas id="clk2" style="display:block;" class="CoolClock:fancy"></canvas>*@
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -54,6 +68,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
+    <script type="text/javascript" src="~/js/coolclock.js"></script>
+    <script type="text/javascript" src="~/js/moreskins.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -63,3 +79,10 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+
+@section Scripts{
+
+    <script src="~/js/coolclock.js"></script>
+}
