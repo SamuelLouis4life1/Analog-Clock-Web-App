@@ -25,12 +25,10 @@ namespace Analog_Clock_App.Models
         [MaxLength(50)]
         public string PhoneNumber { get; set; }
 
-        [Display(Name = "Birthday ")]
-        public DateTime Birthday { get; set; }
-
         [DataType(DataType.Date)]
+        [Display(Name = "Birthday ")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        public string DateTime { get; set; }
+        public DateTime Birthday { get; set; }
 
         public ApplicationUserAddress ApplicationUserAddress { get; set; }
 

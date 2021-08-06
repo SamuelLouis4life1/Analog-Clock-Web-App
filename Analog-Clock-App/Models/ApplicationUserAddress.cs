@@ -13,7 +13,7 @@ namespace Analog_Clock_App.Models
 
         [JsonProperty("cep")]
         [Display(Name = "Postal Code")]
-        [MaxLength(10)]
+        [MaxLength(50)]
         public string PostalCode { get; set; }
 
         [JsonProperty("logradouro")]
@@ -23,6 +23,11 @@ namespace Analog_Clock_App.Models
 
         [JsonProperty("complemento")]
         [Display(Name = "Addicional Address ")]
+        [MaxLength(50)]
+        public string AddicionalAddress { get; set; }
+
+        [JsonProperty("bairro")]
+        [Display(Name = "Neighborhood ")]
         [MaxLength(50)]
         public string AddicionalAddress { get; set; }
 
@@ -59,6 +64,6 @@ namespace Analog_Clock_App.Models
         public string Siafi { get; set; }
 
         public bool IsAuthorizedToPause { get; set; }
-        
+
     }
 }

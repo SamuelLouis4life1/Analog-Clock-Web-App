@@ -32,6 +32,7 @@ namespace Analog_Clock_App.Controllers
         }
 
 
+
         public IActionResult Privacy()
         {
             return View();
