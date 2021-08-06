@@ -70,7 +70,7 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
 
             //[Display(Name = "Phone Number")]
             [Required]
-            [MaxLength(12)]
+            [MaxLength(15)]
             public string PhoneNumber { get; set; }
 
             [Display(Name = "Birthday")]

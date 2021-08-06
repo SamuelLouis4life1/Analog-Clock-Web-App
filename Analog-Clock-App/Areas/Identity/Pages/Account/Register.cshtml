@@ -35,7 +35,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> +55</span>
                             </div>
-                            <input asp-for="Input.PhoneNumber" type="text" placeholder="(xx) xxxxx-xxxx" class="form-control" id="telefone" name="telefone" maxlength="5" required />
+                            <input asp-for="Input.PhoneNumber" type="text" placeholder="(xx) xxxxx-xxxx" class="form-control" id="telefone" name="telefone" required />
                             <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="Input.ApplicationUserAddress.DDD"></label>
-                            <input asp-for="Input.ApplicationUserAddress.DDD" type="text" placeholder="DDD" class="form-control" />
+                            <input asp-for="Input.ApplicationUserAddress.DDD" type="text" placeholder="DDD" class="form-control"  maxlength="3" required />
                             <span asp-validation-for="Input.ApplicationUserAddress.DDD" class="text-danger"></span>
                         </div>
 
