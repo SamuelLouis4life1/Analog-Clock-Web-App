@@ -19,31 +19,32 @@ namespace Analog_Clock_App.Models
         [JsonProperty("logradouro")]
         [Display(Name = "Street Address ")]
         [MaxLength(50)]
-        public string StreetAddress { get; set; }
+        public string logradouro { get; set; } // StreetAddress
 
         [JsonProperty("complemento")]
         [Display(Name = "Addicional Address ")]
         [MaxLength(50)]
-        public string AddicionalAddress { get; set; }
+        public string complemento { get; set; } // AddicionalAddress
 
         [JsonProperty("bairro")]
         [Display(Name = "Neighborhood ")]
         [MaxLength(50)]
-        public string Neighborhood { get; set; }
+        public string bairro { get; set; } // Neighborhood
 
 
         [JsonProperty("localidade")]
         [Display(Name = "City ")]
         [MaxLength(50)]
-        public string City { get; set; }
+        public string localidade { get; set; } // City
 
         [JsonProperty("uf")]
         [Display(Name = "State ")]
         [MaxLength(50)]
-        public string State { get; set; }
+        public string uf { get; set; } // State
 
         [JsonProperty("numero")]
-        public string Number { get; set; }
+        [Display(Name = "Number ")]
+        public string Number { get; set; } // Number
 
         [JsonProperty("ibge")]
         public string Ibge { get; set; }

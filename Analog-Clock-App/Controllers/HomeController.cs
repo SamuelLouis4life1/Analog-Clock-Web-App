@@ -1,4 +1,5 @@
 ﻿using Analog_Clock_App.Models;
+using Analog_Clock_App.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,8 +19,22 @@ namespace Analog_Clock_App.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index([FromQuery] string clock)
         {
+            if (!string.IsNullOrEmpty(clock))
+            {
+                HttpContext.Response.Cookies.Append(nameof(clock), clock);
+            }
+
+            var model = new HomeIndexViewModel()
+            {
+                Clock = !string.IsNullOrEmpty(clock) 
+                    ? clock 
+                    : Request.Cookies.Any(c => c.Key == nameof(clock))
+                        ? Request.Cookies[nameof(clock)]
+                        : "sun"
+            };
+
 
             try
             {
@@ -30,7 +45,7 @@ namespace Analog_Clock_App.Controllers
 
             }
 
-            return View();
+            return View(model);
         }
 
 

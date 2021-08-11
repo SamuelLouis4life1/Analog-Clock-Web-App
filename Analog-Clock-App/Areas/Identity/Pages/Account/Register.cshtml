@@ -16,6 +16,9 @@
                         <h3 class="col-12 text-success text-center py-4">
                             <strong>Register as a new User</strong>
                         </h3>
+                        <div>
+                            <p>USER INFORMATION</p>
+                        </div>
                         <hr />
 
                         <div asp-validation-summary="All" class="text-danger"></div>
@@ -37,46 +40,48 @@
                             <input asp-for="Input.PhoneNumber"  placeholder="Phone Number" class="form-control" />
                             <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                         </div>
-                        @*<div class="form-group">
-            <label asp-for="Input.Birthday"></label>
-            <input asp-for="Input.Birthday" class="form-control" />
-            <span asp-validation-for="Input.Birthday" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.PostalCode"></label>
-            <input asp-for="Input.ApplicationUserAddress.PostalCode" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.PostalCode" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.StreetAddress"></label>
-            <input asp-for="Input.ApplicationUserAddress.StreetAddress" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.StreetAddress" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.Neighborhood"></label>
-            <input asp-for="Input.ApplicationUserAddress.Neighborhood" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.Neighborhood" class="text-danger"></span>
-        </div>            <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.City"></label>
-            <input asp-for="Input.ApplicationUserAddress.City" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.City" class="text-danger"></span>
-        </div>            <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.State"></label>
-            <input asp-for="Input.ApplicationUserAddress.State" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.State" class="text-danger"></span>
-        </div>            <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.Number"></label>
-            <input asp-for="Input.ApplicationUserAddress.Number" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.Number" class="text-danger"></span>
-        </div>            <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.Ibge"></label>
-            <input asp-for="Input.ApplicationUserAddress.Ibge" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.Ibge" class="text-danger"></span>
-        </div>            <div class="form-group">
-            <label asp-for="Input.ApplicationUserAddress.DDD"></label>
-            <input asp-for="Input.ApplicationUserAddress.DDD" class="form-control" />
-            <span asp-validation-for="Input.ApplicationUserAddress.DDD" class="text-danger"></span>
-        </div>*@
+                        <div class="form-group">
+                            <label asp-for="Input.Birthday"></label>
+                            <input asp-for="Input.Birthday" class="form-control" />
+                            <span asp-validation-for="Input.Birthday" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.PostalCode"></label>
+                            <input asp-for="Input.ApplicationUserAddress.PostalCode" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.PostalCode" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.logradouro"></label>
+                            <input asp-for="Input.ApplicationUserAddress.logradouro" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.logradouro" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.bairro"></label>
+                            <input asp-for="Input.ApplicationUserAddress.bairro" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.bairro" class="text-danger"></span>
+                        </div>            
+                        <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.localidade"></label>
+                            <input asp-for="Input.ApplicationUserAddress.localidade" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.localidade" class="text-danger"></span>
+                        </div>            
+                        <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.uf"></label>
+                            <input asp-for="Input.ApplicationUserAddress.uf" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.uf" class="text-danger"></span>
+                        </div>            <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.Number"></label>
+                            <input asp-for="Input.ApplicationUserAddress.Number" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.Number" class="text-danger"></span>
+                        </div>            <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.Ibge"></label>
+                            <input asp-for="Input.ApplicationUserAddress.Ibge" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.Ibge" class="text-danger"></span>
+                        </div>            <div class="form-group">
+                            <label asp-for="Input.ApplicationUserAddress.DDD"></label>
+                            <input asp-for="Input.ApplicationUserAddress.DDD" class="form-control" />
+                            <span asp-validation-for="Input.ApplicationUserAddress.DDD" class="text-danger"></span>
+                        </div>
 
                         <div class="form-group">
                             <label asp-for="Input.Password"></label>
@@ -142,8 +147,6 @@
         </div>
     </div>
 </div>
-
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

@@ -1,4 +1,5 @@
-﻿@model Analog_Clock_App.Models.ApplicationUser
+﻿@model Analog_Clock_App.Models.ViewModels.HomeIndexViewModel;
+
 @*https://www.includehelp.com/dot-net/print-date-and-time-in-different-formats.aspx*@
 @*http://www.aspdotnet-pools.com/2014/06/digital-clock-in-aspnet-in-c.html*@
 
@@ -11,10 +12,12 @@
 
     <div class="center">
         <div class="center">
-            <canvas id="clk2" style="display:block;" class="CoolClock:fancy"></canvas>
+            <canvas id="clk2" style="display:block;" class="CoolClock:@Model.Clock"></canvas>
+
         </div>
     </div>
 
-    <h2>The time on the server is: @DateTime.Now.ToString("MMMM, dddd, yyyy", System.Globalization.CultureInfo.InvariantCulture).ToUpper()</h2>
-    <h2>A hora no servidor é: @DateTime.Now.ToString("dddd, dd MMMM, yyyy").ToUpper()</h2>
+    <h2>The time on the server is: @DateTime.Now.ToString("f", System.Globalization.CultureInfo.InvariantCulture).ToUpper()</h2>
+    <h2>A hora no servidor é: @DateTime.Now.ToString("f").ToUpper()</h2>
 
+</div>
