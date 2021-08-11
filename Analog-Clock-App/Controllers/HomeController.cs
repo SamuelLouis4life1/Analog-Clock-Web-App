@@ -36,17 +36,10 @@ namespace Analog_Clock_App.Controllers
             };
 
 
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-            }
 
             return View(model);
         }
+
 
 
         public IActionResult Privacy()

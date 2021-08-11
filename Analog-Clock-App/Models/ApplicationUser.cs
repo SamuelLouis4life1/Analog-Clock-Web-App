@@ -20,7 +20,7 @@ namespace Analog_Clock_App.Models
         [MaxLength(50)]
         public string Email { get; set; }
 
-        [Display(Name = "Phone Number ")]
+        //[Display(Name = "Phone Number ")]
         [Required]
         [MaxLength(50)]
         public string PhoneNumber { get; set; }
