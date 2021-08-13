@@ -22,8 +22,8 @@ namespace Analog_Clock_App.Models
         public string logradouro { get; set; } // StreetAddress
 
 
-        [JsonProperty("bairro")]
-        [Display(Name = "Neighborhood ")]
+        [JsonProperty("complemento")]
+        [Display(Name = "Addicional Address ")]
         [MaxLength(50)]
         public string complemento { get; set; } // AddicionalAddress
 

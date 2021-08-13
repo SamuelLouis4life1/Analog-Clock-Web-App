@@ -15,12 +15,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Refit;
 
 namespace Analog_Clock_App.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
+        ApplicationUserAddress userAddress = new ApplicationUserAddress();
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
@@ -80,12 +82,26 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
             public string DateTime { get; set; }
 
-            public ApplicationUserAddress ApplicationUserAddress { get; set; }
+            public ApplicationUserAddress applicationUserAddress { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
+
+            //var cepClient = RestService.For<IApplicationUserAddress>("http://viacep.com.br/");
+
+            //string cepInformado = applicationUserAddress.PostalCode;
+            //var address = /*await*/ cepClient.GetAddressAsync(cepInformado);
+
+
+            //Input = new InputModel()
+            //{
+
+            //};
+
+
+
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
@@ -95,6 +111,23 @@ namespace Analog_Clock_App.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
+
+                var cepClient = RestService.For<IApplicationUserAddress>("http://viacep.com.br/");
+
+                string cepInformado = userAddress.PostalCode;
+                var address = await cepClient.GetAddressAsync(cepInformado);
+
+                var users = new ApplicationUserAddress
+                {
+                    //address.bairro = Input.applicationUserAddress.bairro,
+                    //.Result.Neighborhood = Input.
+                    //applicationUserAddress.Neighborhood = Input.ApplicationUserAddress.Neighborhood,
+
+                };
+
+
+
+
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
